@@ -12,7 +12,7 @@ interface SpecificationInterface
      *
      * @return CompositeInterface
      */
-    public function andX(self $specification): CompositeInterface;
+    public function and(self $specification): CompositeInterface;
 
     /**
      * Compose the current specification with the given one through an OR operator
@@ -21,7 +21,7 @@ interface SpecificationInterface
      *
      * @return CompositeInterface
      */
-    public function orX(self $specification): CompositeInterface;
+    public function or(self $specification): CompositeInterface;
 
     /**
      * Negate the current specification
