@@ -1,0 +1,26 @@
+{
+    "name": "innmind/specification",
+    "type": "library",
+    "description": "Interfaces allowing to compose a tree of specifications",
+    "keywords": ["specification", "ddd"],
+    "homepage": "http://github.com/Innmind/Specification",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Baptiste Langlade",
+            "email": "langlade.baptiste@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "http://github.com/Innmind/Specification/issues"
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Innmind\\Specification": ""
+        }
+    },
+    "target-dir": "Innmind/Specification"
+}
