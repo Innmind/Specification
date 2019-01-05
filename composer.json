@@ -18,9 +18,12 @@
         "php": "~7.2"
     },
     "autoload": {
-        "psr-0": {
-            "Innmind\\Specification": "src/"
+        "psr-4": {
+            "Innmind\\Specification\\": "src/"
         }
     },
-    "target-dir": "Innmind/Specification"
+    "target-dir": "Innmind/Specification",
+    "require-dev": {
+        "phpunit/phpunit": "~7.0"
+    }
 }

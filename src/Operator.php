@@ -5,18 +5,29 @@ namespace Innmind\Specification;
 
 final class Operator
 {
-    const AND = 'AND';
-    const OR = 'OR';
+    private const AND = 'AND';
+    private const OR = 'OR';
 
     private $operator;
 
-    public function __construct(string $operator)
+    private function __construct(string $operator)
     {
-        if (!in_array($operator, [self::AND, self::OR])) {
-            throw new \InvalidArgumentException;
-        }
-
         $this->operator = $operator;
+    }
+
+    public static function and(): self
+    {
+        return new self(self::AND);
+    }
+
+    public static function or(): self
+    {
+        return new self(self::OR);
+    }
+
+    public function equals(self $self): bool
+    {
+        return (string) $this === (string) $self;
     }
 
     public function __toString(): string
