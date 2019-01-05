@@ -3,21 +3,21 @@ declare(strict_types = 1);
 
 namespace Innmind\Specification;
 
-interface CompositeInterface extends SpecificationInterface
+interface Composite extends Specification
 {
     /**
      * Return the left side of the composition
      *
-     * @return SpecificationInterface
+     * @return Specification
      */
-    public function left(): SpecificationInterface;
+    public function left(): Specification;
 
     /**
      * Return the right side of the composition
      *
-     * @return SpecificationInterface
+     * @return Specification
      */
-    public function right(): SpecificationInterface;
+    public function right(): Specification;
 
     /**
      * Return the operator

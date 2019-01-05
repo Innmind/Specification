@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Innmind\Specification;
 
-interface ComparatorInterface extends SpecificationInterface
+interface Comparator extends Specification
 {
     /**
      * Return the property name of an object on which the comparison is applied
