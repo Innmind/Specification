@@ -15,12 +15,15 @@
         "issues": "http://github.com/Innmind/Specification/issues"
     },
     "require": {
-        "php": ">=7.0"
+        "php": "~7.2"
     },
     "autoload": {
-        "psr-0": {
-            "Innmind\\Specification": ""
+        "psr-4": {
+            "Innmind\\Specification\\": "src/"
         }
     },
-    "target-dir": "Innmind/Specification"
+    "target-dir": "Innmind/Specification",
+    "require-dev": {
+        "phpunit/phpunit": "~7.0"
+    }
 }

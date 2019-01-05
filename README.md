@@ -10,11 +10,12 @@ The decomposition part is useful in the case you want to translate your specific
 
 ```php
 use Innmind\Specification\{
-    SpecificationInterface,
-    CompositeInterface,
+    Specification,
+    Composite,
     Operator,
-    NotInterface,
-    ComparatorInterface
+    Not,
+    Comparator,
+    Sign,
 };
 
 class User
@@ -27,28 +28,28 @@ class User
     }
 }
 
-class AndSpecification implements CompositeInterface
+class AndSpecification implements Composite
 {
     private $left;
     private $right;
 
-    public function __construct(SpecificationInterface $left, SpecificationInterface $right)
+    public function __construct(Specification $left, Specification $right)
     {
         $this->left = $left;
         $this->right = $right;
     }
 
-    public function left(): SpecificationInterface
+    public function left(): Specification
     {
         return $this->left;
     }
 
     public function operator(): Operator
     {
-        return new Operator(Operator::AND);
+        return Operator::and();
     }
 
-    public function right(): SpecificationInterface
+    public function right(): Specification
     {
         return $this->right;
     }
@@ -59,28 +60,28 @@ class AndSpecification implements CompositeInterface
     }
 }
 
-class OrSpecification implements CompositeInterface
+class OrSpecification implements Composite
 {
     private $left;
     private $right;
 
-    public function __construct(SpecificationInterface $left, SpecificationInterface $right)
+    public function __construct(Specification $left, Specification $right)
     {
         $this->left = $left;
         $this->right = $right;
     }
 
-    public function left(): SpecificationInterface
+    public function left(): Specification
     {
         return $this->left;
     }
 
     public function operator(): Operator
     {
-        return new Operator(Operator::OR);
+        return Operator::or();
     }
 
-    public function right(): SpecificationInterface
+    public function right(): Specification
     {
         return $this->right;
     }
@@ -91,16 +92,16 @@ class OrSpecification implements CompositeInterface
     }
 }
 
-class NotSpecification implements NotInterface
+class NotSpecification implements Not
 {
     private $specification;
 
-    public function __construct(SpecificationInterface $specification)
+    public function __construct(Specification $specification)
     {
         $this->specification = $specification;
     }
 
-    public function specification(): SpecificationInterface
+    public function specification(): Specification
     {
         return $this->specification;
     }
@@ -111,7 +112,7 @@ class NotSpecification implements NotInterface
     }
 }
 
-class NameSpecification implements ComparatorInterface
+class NameSpecification implements Comparator
 {
     private $name;
 
@@ -120,17 +121,17 @@ class NameSpecification implements ComparatorInterface
         $this->name = $name;
     }
 
-    public function and(SpecificationInterface $specification): CompositeInterface
+    public function and(Specification $specification): Composite
     {
         return new AndSpecification($this, $specification);
     }
 
-    public function or(SpecificationInterface $specification): CompositeInterface
+    public function or(Specification $specification): Composite
     {
         return new OrSpecification($this, $specification);
     }
 
-    public function not(): NotInterface
+    public function not(): Not
     {
         return new NotSpecification($this);
     }
@@ -140,9 +141,9 @@ class NameSpecification implements ComparatorInterface
         return 'name';
     }
 
-    public function sign(): string
+    public function sign(): Sign
     {
-        return '=';
+        return Sign::equality();
     }
 
     public function value()
