@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Innmind\\Specification": ""
+            "Innmind\\Specification": "src/"
         }
     },
     "target-dir": "Innmind/Specification"
