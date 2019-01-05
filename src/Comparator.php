@@ -13,13 +13,11 @@ interface Comparator extends Specification
     public function property(): string;
 
     /**
-     * Return the ign used used for the comparison
+     * Return the sign used for the comparison
      *
-     * May it be "==", "in", ">" or anything you can think of
-     *
-     * @return string
+     * @return Sign
      */
-    public function sign(): string;
+    public function sign(): Sign;
 
     /**
      * Return the value against which we apply the comparison
