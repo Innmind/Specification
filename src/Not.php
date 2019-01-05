@@ -7,8 +7,6 @@ interface Not extends Specification
 {
     /**
      * Return the specification that is negated
-     *
-     * @return Specification
      */
     public function specification(): Specification;
 }
