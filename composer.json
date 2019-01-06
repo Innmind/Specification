@@ -22,7 +22,6 @@
             "Innmind\\Specification\\": "src/"
         }
     },
-    "target-dir": "Innmind/Specification",
     "require-dev": {
         "phpunit/phpunit": "~7.0"
     }
