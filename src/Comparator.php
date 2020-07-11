@@ -3,6 +3,9 @@ declare(strict_types = 1);
 
 namespace Innmind\Specification;
 
+/**
+ * @psalm-immutable
+ */
 interface Comparator extends Specification
 {
     public function property(): string;
