@@ -3,6 +3,9 @@ declare(strict_types = 1);
 
 namespace Innmind\Specification;
 
+/**
+ * @psalm-immutable
+ */
 final class Operator
 {
     private const AND = 'AND';
