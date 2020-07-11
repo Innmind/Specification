@@ -18,11 +18,17 @@ final class Operator
         $this->operator = $operator;
     }
 
+    /**
+     * @psalm-pure
+     */
     public static function and(): self
     {
         return new self(self::AND);
     }
 
+    /**
+     * @psalm-pure
+     */
     public static function or(): self
     {
         return new self(self::OR);
