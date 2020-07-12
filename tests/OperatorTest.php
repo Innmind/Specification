@@ -13,6 +13,7 @@ class OperatorTest extends TestCase
         $this->assertInstanceOf(Operator::class, Operator::and());
         $this->assertSame('AND', (string) Operator::and());
         $this->assertTrue(Operator::and()->equals(Operator::and()));
+        $this->assertSame(Operator::and(), Operator::and());
     }
 
     public function testOr()
@@ -20,5 +21,6 @@ class OperatorTest extends TestCase
         $this->assertInstanceOf(Operator::class, Operator::or());
         $this->assertSame('OR', (string) Operator::or());
         $this->assertTrue(Operator::or()->equals(Operator::or()));
+        $this->assertSame(Operator::or(), Operator::or());
     }
 }

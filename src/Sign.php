@@ -21,6 +21,19 @@ final class Sign
     private const CONTAINS = 'CONTAINS';
     private const IN = 'IN';
 
+    private static ?self $equality = null;
+    private static ?self $inequality = null;
+    private static ?self $lessThan = null;
+    private static ?self $moreThan = null;
+    private static ?self $lessThanOrEqual = null;
+    private static ?self $moreThanOrEqual = null;
+    private static ?self $isNull = null;
+    private static ?self $isNotNull = null;
+    private static ?self $startsWith = null;
+    private static ?self $endsWith = null;
+    private static ?self $contains = null;
+    private static ?self $in = null;
+
     private $value;
 
     private function __construct(string $value)
@@ -33,7 +46,8 @@ final class Sign
      */
     public static function equality(): self
     {
-        return new self(self::EQUALITY);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$equality ??= new self(self::EQUALITY);
     }
 
     /**
@@ -41,7 +55,8 @@ final class Sign
      */
     public static function inequality(): self
     {
-        return new self(self::INEQUALITY);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$inequality ??= new self(self::INEQUALITY);
     }
 
     /**
@@ -49,7 +64,8 @@ final class Sign
      */
     public static function lessThan(): self
     {
-        return new self(self::LESS_THAN);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$lessThan ??= new self(self::LESS_THAN);
     }
 
     /**
@@ -57,7 +73,8 @@ final class Sign
      */
     public static function moreThan(): self
     {
-        return new self(self::MORE_THAN);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$moreThan ??= new self(self::MORE_THAN);
     }
 
     /**
@@ -65,7 +82,8 @@ final class Sign
      */
     public static function lessThanOrEqual(): self
     {
-        return new self(self::LESS_THAN_OR_EQUAL);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$lessThanOrEqual ??= new self(self::LESS_THAN_OR_EQUAL);
     }
 
     /**
@@ -73,7 +91,8 @@ final class Sign
      */
     public static function moreThanOrEqual(): self
     {
-        return new self(self::MORE_THAN_OR_EQUAL);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$moreThanOrEqual ??= new self(self::MORE_THAN_OR_EQUAL);
     }
 
     /**
@@ -81,7 +100,8 @@ final class Sign
      */
     public static function isNull(): self
     {
-        return new self(self::IS_NULL);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$isNull ??= new self(self::IS_NULL);
     }
 
     /**
@@ -89,7 +109,8 @@ final class Sign
      */
     public static function isNotNull(): self
     {
-        return new self(self::IS_NOT_NULL);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$isNotNull ??= new self(self::IS_NOT_NULL);
     }
 
     /**
@@ -97,7 +118,8 @@ final class Sign
      */
     public static function startsWith(): self
     {
-        return new self(self::STARTS_WITH);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$startsWith ??= new self(self::STARTS_WITH);
     }
 
     /**
@@ -105,7 +127,8 @@ final class Sign
      */
     public static function endsWith(): self
     {
-        return new self(self::ENDS_WITH);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$endsWith ??= new self(self::ENDS_WITH);
     }
 
     /**
@@ -113,7 +136,8 @@ final class Sign
      */
     public static function contains(): self
     {
-        return new self(self::CONTAINS);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$contains ??= new self(self::CONTAINS);
     }
 
     /**
@@ -121,7 +145,8 @@ final class Sign
      */
     public static function in(): self
     {
-        return new self(self::IN);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$in ??= new self(self::IN);
     }
 
     public function equals(self $self): bool
