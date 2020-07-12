@@ -16,6 +16,7 @@ class SignTest extends TestCase
         $this->assertInstanceOf(Sign::class, Sign::$method());
         $this->assertSame($value, (string) Sign::$method());
         $this->assertTrue(Sign::$method()->equals(Sign::$method()));
+        $this->assertSame(Sign::$method(), Sign::$method());
     }
 
     public function possibilities(): array

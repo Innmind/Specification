@@ -11,6 +11,9 @@ final class Operator
     private const AND = 'AND';
     private const OR = 'OR';
 
+    private static ?self $and = null;
+    private static ?self $or = null;
+
     private $operator;
 
     private function __construct(string $operator)
@@ -23,7 +26,8 @@ final class Operator
      */
     public static function and(): self
     {
-        return new self(self::AND);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$and ??= new self(self::AND);
     }
 
     /**
@@ -31,7 +35,8 @@ final class Operator
      */
     public static function or(): self
     {
-        return new self(self::OR);
+        /** @psalm-suppress ImpureStaticProperty */
+        return self::$or ??= new self(self::OR);
     }
 
     public function equals(self $self): bool
