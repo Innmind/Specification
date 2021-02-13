@@ -1,5 +1,9 @@
 # Specification
 
+[![Build Status](https://github.com/innmind/specification/workflows/CI/badge.svg?branch=master)](https://github.com/innmind/specification/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/innmind/specification/branch/develop/graph/badge.svg)](https://codecov.io/gh/innmind/specification)
+[![Type Coverage](https://shepherd.dev/github/innmind/specification/coverage.svg)](https://shepherd.dev/github/innmind/specification)
+
 Library containing interfaces allowing to compose a tree of specification. As you may want to type hint the object you to test against, the interfaces does **not** enforce a method `isSatisfiedBy`, it will be up to you to create such method.
 
 The goal here is to have a set of interfaces so a specification can be composed easily, _and_ decomposed afterward.
