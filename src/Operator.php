@@ -21,6 +21,11 @@ final class Operator
         $this->operator = $operator;
     }
 
+    public function __toString(): string
+    {
+        return $this->operator;
+    }
+
     /**
      * @psalm-pure
      */
@@ -42,10 +47,5 @@ final class Operator
     public function equals(self $self): bool
     {
         return (string) $this === (string) $self;
-    }
-
-    public function __toString(): string
-    {
-        return $this->operator;
     }
 }
