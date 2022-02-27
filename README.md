@@ -50,7 +50,7 @@ class AndSpecification implements Composite
 
     public function operator(): Operator
     {
-        return Operator::and();
+        return Operator::and;
     }
 
     public function right(): Specification
@@ -82,7 +82,7 @@ class OrSpecification implements Composite
 
     public function operator(): Operator
     {
-        return Operator::or();
+        return Operator::or;
     }
 
     public function right(): Specification
@@ -147,7 +147,7 @@ class NameSpecification implements Comparator
 
     public function sign(): Sign
     {
-        return Sign::equality();
+        return Sign::equality;
     }
 
     public function value()
