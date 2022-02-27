@@ -13,9 +13,5 @@ interface Comparator extends Specification
      */
     public function property(): string;
     public function sign(): Sign;
-
-    /**
-     * @return mixed
-     */
-    public function value();
+    public function value(): mixed;
 }
