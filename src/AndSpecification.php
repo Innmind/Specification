@@ -31,6 +31,6 @@ class AndSpecification implements Composite
 
     public function operator(): Operator
     {
-        return Operator::and();
+        return Operator::and;
     }
 }

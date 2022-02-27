@@ -31,6 +31,6 @@ class OrSpecification implements Composite
 
     public function operator(): Operator
     {
-        return Operator::or();
+        return Operator::or;
     }
 }
