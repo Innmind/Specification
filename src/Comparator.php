@@ -8,6 +8,9 @@ namespace Innmind\Specification;
  */
 interface Comparator extends Specification
 {
+    /**
+     * @return non-empty-string
+     */
     public function property(): string;
     public function sign(): Sign;
 
