@@ -1,7 +1,6 @@
 # Specification
 
 [![Build Status](https://github.com/innmind/specification/workflows/CI/badge.svg?branch=master)](https://github.com/innmind/specification/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/innmind/specification/branch/develop/graph/badge.svg)](https://codecov.io/gh/innmind/specification)
 [![Type Coverage](https://shepherd.dev/github/innmind/specification/coverage.svg)](https://shepherd.dev/github/innmind/specification)
 
 Library containing interfaces allowing to compose a tree of specification. As you may want to type hint the object you to test against, the interfaces does **not** enforce a method `isSatisfiedBy`, it will be up to you to create such method.
@@ -50,7 +49,7 @@ class AndSpecification implements Composite
 
     public function operator(): Operator
     {
-        return Operator::and();
+        return Operator::and;
     }
 
     public function right(): Specification
@@ -82,7 +81,7 @@ class OrSpecification implements Composite
 
     public function operator(): Operator
     {
-        return Operator::or();
+        return Operator::or;
     }
 
     public function right(): Specification
@@ -147,7 +146,7 @@ class NameSpecification implements Comparator
 
     public function sign(): Sign
     {
-        return Sign::equality();
+        return Sign::equality;
     }
 
     public function value()
