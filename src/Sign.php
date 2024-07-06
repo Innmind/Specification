@@ -9,13 +9,8 @@ namespace Innmind\Specification;
 enum Sign
 {
     case equality;
-    case inequality;
     case lessThan;
     case moreThan;
-    case lessThanOrEqual;
-    case moreThanOrEqual;
-    case isNull;
-    case isNotNull;
     case startsWith;
     case endsWith;
     case contains;
