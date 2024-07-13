@@ -14,6 +14,8 @@ use Innmind\Specification\{
  */
 final class Property implements Comparator
 {
+    use Composable;
+
     /**
      * @param non-empty-string $property
      */
