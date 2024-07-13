@@ -23,7 +23,8 @@ final class Property implements Comparator
         private string $property,
         private Sign $sign,
         private mixed $value,
-    ) {}
+    ) {
+    }
 
     /**
      * @psalm-pure
