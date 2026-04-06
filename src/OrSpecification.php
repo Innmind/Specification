@@ -19,16 +19,19 @@ class OrSpecification implements Composite
         $this->right = $right;
     }
 
+    #[\Override]
     public function left(): Specification
     {
         return $this->left;
     }
 
+    #[\Override]
     public function right(): Specification
     {
         return $this->right;
     }
 
+    #[\Override]
     public function operator(): Operator
     {
         return Operator::or;

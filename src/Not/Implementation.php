@@ -23,6 +23,7 @@ class Implementation implements Not
         $this->specification = $specification;
     }
 
+    #[\Override]
     public function specification(): Specification
     {
         return $this->specification;
