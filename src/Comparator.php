@@ -11,7 +11,10 @@ interface Comparator extends Specification
     /**
      * @return non-empty-string
      */
+    #[\NoDiscard]
     public function property(): string;
+    #[\NoDiscard]
     public function sign(): Sign;
+    #[\NoDiscard]
     public function value(): mixed;
 }

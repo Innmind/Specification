@@ -31,6 +31,7 @@ final class Property implements Comparator
      *
      * @param non-empty-string $property
      */
+    #[\NoDiscard]
     public static function of(
         string $property,
         Sign $sign,
@@ -39,16 +40,19 @@ final class Property implements Comparator
         return new self($property, $sign, $value);
     }
 
+    #[\Override]
     public function property(): string
     {
         return $this->property;
     }
 
+    #[\Override]
     public function sign(): Sign
     {
         return $this->sign;
     }
 
+    #[\Override]
     public function value(): mixed
     {
         return $this->value;
