@@ -8,7 +8,10 @@ namespace Innmind\Specification;
  */
 interface Composite extends Specification
 {
+    #[\NoDiscard]
     public function left(): Specification;
+    #[\NoDiscard]
     public function right(): Specification;
+    #[\NoDiscard]
     public function operator(): Operator;
 }

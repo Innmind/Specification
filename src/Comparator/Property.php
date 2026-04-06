@@ -31,6 +31,7 @@ final class Property implements Comparator
      *
      * @param non-empty-string $property
      */
+    #[\NoDiscard]
     public static function of(
         string $property,
         Sign $sign,
